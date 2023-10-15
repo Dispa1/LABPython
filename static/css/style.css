@@ -1,0 +1,376 @@
+/* Сброс стилей для обнуления стандартных браузерных стилей */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Основные стили для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.containers {
+width: 1000px;
+margin: 0 auto;
+}
+
+.records {
+    width: 100%;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.titleRecords {
+    text-decoration: none;
+    color: #333;
+}
+
+.titleRecords:hover {
+    color: #ff0000;
+}
+
+main {
+    padding: 20px;
+}
+
+.tag-list {
+    float: left;
+    width: 20%; /* Ширина блока с тегами */
+    margin-right: 2%; /* Отступ между блоками */
+    margin-top: 0; /* Обнуляем верхний отступ */
+}
+
+/* Очистка после плавающих элементов для предотвращения перекрытия */
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Дополнительные стили по вашему усмотрению */
+.tag-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tag-list li {
+    margin-bottom: 10px;
+}
+
+.tag-list a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.tag-list a:hover {
+    color: #ff0000;
+}
+
+.post {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.post-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post p {
+    margin-top: 10px;
+}
+
+.post-author {
+    color: #888;
+}
+
+footer {
+    text-align: right;
+    padding: 20px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.fotpost {
+    overflow: hidden; /* Чтобы родительский элемент обернул дочерние элементы */
+}
+
+.like {
+    float: left; /* Выравниваем влево */
+    margin-right: 10px; /* Добавляем отступ справа для разделения элементов */
+}
+
+.post-author {
+    float: right; /* Выравниваем вправо */
+}
+
+
+main {
+    padding: 20px;
+}
+
+.blog-posts {
+    float: left;
+    width: 58%; /* Устанавливаем подходящую ширину, учитывая отступы между блоками */
+    margin-right: 2%;
+    margin-top: 0; /* Обнуляем верхний отступ */
+}
+
+.blog-post h1 {
+    font-size: 24px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.post-content p {
+    margin-top: 10px;
+}
+
+.post-author {
+    color: #888;
+}
+
+.post-actions {
+    margin-top: 20px;
+}
+
+.like {
+    margin-right: 10px;
+}
+
+.like-button {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.like-button:hover {
+    background-color: #ff0000;
+}
+
+.comments {
+    margin-top: 20px;
+}
+
+.comment-form h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comment-form label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.comment-form textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="submit"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form input[type="submit"] {
+    width: 100%;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment h4 {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.comment p {
+    margin-top: 5px;
+}
+
+.comment-input {
+    height: 100px; /* Увеличьте высоту по своему усмотрению */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Разрешить вертикальное изменение размера */
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.related-posts {
+    margin-top: 20px;
+}
+
+.related-posts h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.related-posts ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.related-posts li {
+    margin-bottom: 10px;
+}
+
+.related-posts a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.related-posts a:hover {
+    color: #ff0000;
+}
+
+
+.alltags {
+    display: inline-block;
+    margin: 3px;
+    border-radius: 5px;
+    padding: 3px;
+    white-space: normal; /* Переносить на новую строку, когда не умещается в ширину родительского блока */
+    background-color: #a7a7a7;
+}
+
+/* Стили для раздела "Популярные посты" */
+.popular-posts {
+    margin-top: 20px;
+}
+
+.popular-posts h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.popular-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popular-posts li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.popular-posts a {
+    text-decoration: none;
+    color: #007BFF; /* Цвет ссылки можете выбрать подходящий */
+}
+
+/* Стили для количества комментариев в "Популярных постах" */
+.popular-posts li span {
+    font-size: 16px;
+    color: #555; /* Цвет текста комментариев можете выбрать подходящий */
+}
+
+.date {
+    margin-top: 5px;
+}
+
+/* Стили для секции "Схожие посты" */
+.related-posts {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+}
+
+.recent-posts h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.recent-posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-posts ul li {
+    margin-bottom: 10px;
+}
+
+.recent-posts ul li a {
+    text-decoration: none;
+    color: #0074b5;
+    font-weight: 600;
+}
