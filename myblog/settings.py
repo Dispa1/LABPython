@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 REST_FRAMEWORK = {
@@ -81,10 +84,15 @@ WSGI_APPLICATION = 'myblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'LABPY',
+        'USER': 'postgres',
+        'PASSWORD': 'master',
+        'HOST': 'localhost',  # Укажите хост базы данных PostgreSQL
+        'PORT': '5433',       # Порт по умолчанию для PostgreSQL
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

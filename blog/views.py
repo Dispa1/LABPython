@@ -6,13 +6,24 @@ from django.db.models import Count
 from taggit.models import Tag  # Импортируйте модель Tag из django-taggit
 
 # Представление для отображения списка записей в блоге
+# Ваше представление для отображения списка записей в блоге
 class PostView(View):
     def get(self, request):
         all_tags = Tag.objects.all()
         posts = Post.objects.all()
-        comment_sorted_posts = Post.objects.annotate(comment_count=Count('comments')).order_by('-comment_count')[:5]  # Выберите 3 поста с наибольшим количеством комментариев
+        comment_sorted_posts = Post.objects.annotate(comment_count=Count('comments')).order_by('-comment_count')[:5]
         recent_posts = Post.objects.order_by('-date')[:3]
-        return render(request, 'blog/index.html', {'post_list': posts, 'all_tags': all_tags, 'comment_sorted_posts': comment_sorted_posts, 'recent_posts': recent_posts})
+
+        # Добавьте обработку поиска здесь
+        search_query = request.GET.get('q')
+        if search_query:
+            # Если есть поисковой запрос, выполните поиск и передайте результаты
+            search_results = Post.objects.filter(title__icontains=search_query)
+        else:
+            # Если поискового запроса нет, передайте обычные посты
+            search_results = None
+
+        return render(request, 'blog/index.html', {'post_list': posts, 'all_tags': all_tags, 'comment_sorted_posts': comment_sorted_posts, 'recent_posts': recent_posts, 'search_results': search_results})
 
 # Представление для отображения деталей записи в блоге
 class PostDetail(View):
@@ -64,3 +75,14 @@ class DelLike(View):
         except Likes.DoesNotExist:
             return redirect(f'/{pk}')
         return redirect(f'/{pk}')
+
+class SearchPosts(View):
+    template_name = 'blog/index.html'
+
+    def get(self, request):
+        query = request.GET.get('q')
+        if query:
+            posts = Post.objects.filter(title__icontains=query)
+        else:
+            posts = Post.objects.all()
+        return render(request, self.template_name, {'post_list': posts, 'query': query})

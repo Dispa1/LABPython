@@ -374,3 +374,33 @@ main {
     color: #0074b5;
     font-weight: 600;
 }
+
+/* Стили для секции "Поиск" */
+.search-form {
+    margin: 0 auto;
+}
+
+.search-form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    width: 70%; /* Ширина поля ввода */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #007BFF; /* Цвет фона кнопки поиска */
+    color: #fff; /* Цвет текста на кнопке */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Изменение цвета кнопки при наведении курсора */
+}

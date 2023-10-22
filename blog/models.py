@@ -1,5 +1,6 @@
 from django.db import models
 from taggit.managers import TaggableManager
+from django.urls import reverse
 
 # Модель для записей в блоге
 class Post(models.Model):
@@ -9,9 +10,14 @@ class Post(models.Model):
     date = models.DateField('Дата публикации')
     img = models.ImageField('Изображение', upload_to='image/%Y')  # Поле для изображения записи
     tags = TaggableManager()
+    published = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.title}, {self.author}'  # Метод для отображения объекта
+    def get_absolute_url(self):
+    # Здесь вы определите логику формирования URL для каждой записи
+    # Например, предположим, что у вас есть URL-путь 'post_detail' для отдельных записей
+        return reverse('post_detail', args=[str(self.id)])
 
     class Meta:
         verbose_name = 'Запись'  # Название модели в единственном числе

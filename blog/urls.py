@@ -2,6 +2,7 @@ from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
 
+
 urlpatterns = [
     # URL-путь для отображения списка записей в блоге
     path('', views.PostView.as_view(), name='post_list'),
@@ -18,5 +19,5 @@ urlpatterns = [
     # URL-путь для удаления лайка к записи с использованием параметра pk
     path('<int:pk>/del_likes/', views.DelLike.as_view(), name='del_likes'),
 
-    
+    path('search/', views.SearchPosts.as_view(), name='search'),
 ]

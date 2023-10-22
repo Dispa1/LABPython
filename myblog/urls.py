@@ -25,6 +25,15 @@ from django.conf import settings
 # Импортируем функцию для обслуживания медиа-файлов в режиме отладки
 from django.conf.urls.static import static
 
+from django.contrib.sitemaps.views import sitemap
+
+from blog.sitemaps import PostSitemap
+
+
+sitemaps = {
+ 'posts': PostSitemap,
+}
+
 # Определяем список URL-путей
 urlpatterns = [
     # URL для административной панели Django
@@ -32,6 +41,8 @@ urlpatterns = [
 
     # Включаем URL-паттерны из приложения 'blog'
     path('', include('blog.urls')),
+
+    path("sitemap.xml/", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
 ]
 
 # Проверяем, находится ли приложение в режиме отладки

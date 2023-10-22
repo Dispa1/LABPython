@@ -7,7 +7,6 @@
     <title>Мой блог</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="shortcut icon" href="{% static 'css/images/favicon.ico' %}">
-
 </head>
 <body>
     <header>
@@ -18,6 +17,15 @@
             </ul>
         </nav>
     </header>
+
+    <section class="search-form">
+        <h2>Поиск</h2>
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q" placeholder="Поиск..." class="search-input">
+            <button type="submit" class="search-button">Искать</button>
+        </form>
+    </section>
+    
 
     <div class="container">
         <main>
